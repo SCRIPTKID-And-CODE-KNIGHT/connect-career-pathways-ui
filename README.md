@@ -1,73 +1,68 @@
-# Welcome to your Lovable project
+<h1 align="center">🚀✨ FEA CONNECT ✨🚀</h1>
+<p align="center"><i>Connecting People to Opportunities</i></p>
 
-## Project info
+<p align="center">
+  <!-- Replace the URL below with your own animated GIF link -->
+  <img src="https://yourdomain.com/fea-connect-animated.gif" alt="FEA CONNECT Animated Logo" width="300"/>
+</p>
 
-**URL**: https://lovable.dev/projects/8f481565-7095-4850-85f2-ab12035b8f7a
+# 🌐 FEA CONNECT
 
-## How can I edit this code?
+**FEA CONNECT** is a modern, responsive job vacancy website that allows employers to post job opportunities and job seekers to browse and apply through an easy-to-use interface.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🧭 About Us
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8f481565-7095-4850-85f2-ab12035b8f7a) and start prompting.
+**FEA CONNECT** is a digital bridge between job seekers and employers. Our mission is to simplify job hunting and recruitment by providing a streamlined, efficient, and user-friendly platform. Whether you're a fresh graduate, an experienced professional, or an organization looking for talent, FEA CONNECT gives you the tools you need to find the right match quickly and effectively.
 
-Changes made via Lovable will be committed automatically to this repo.
+- 🎯 **Our Goal**: Connect opportunities to people with purpose  
+- 👥 **For Job Seekers**: Easy access to active job listings, smart filtering, and application tracking  
+- 🏢 **For Employers**: Seamless job posting, applicant management, and profile control  
 
-**Use your preferred IDE**
+We believe that finding the right job or candidate shouldn’t require digging through complex systems. FEA CONNECT brings clarity, speed, and modern tech into the world of recruitment.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📌 Project Info
 
-Follow these steps:
+- **Purpose**: Connect job seekers and employers in a simplified, professional platform.
+- **Stack**:
+  - React
+  - TypeScript
+  - Vite
+  - Tailwind CSS
+  - shadcn-ui (UI components)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+---
+
+## ✨ Features
+
+- 🔍 Job listings with filters
+- 📝 Post new jobs via form
+- 💼 Employer and job seeker dashboards
+- ✅ Fully responsive design
+- 📤 Ready to deploy
+
+---
+
+## 🛠️ Getting Started
+
+### Prerequisites:
+- Node.js and npm installed  
+  Install via [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) (recommended)
+
+### Run the project locally:
+
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Go to the project directory
+cd fea-connect
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/8f481565-7095-4850-85f2-ab12035b8f7a) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
