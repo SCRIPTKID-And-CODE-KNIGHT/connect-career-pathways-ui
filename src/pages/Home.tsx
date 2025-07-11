@@ -24,20 +24,20 @@ const Home = () => {
     {
       id: 1,
       title: 'Senior Software Engineer',
-      company: 'TechCorp Inc.',
-      location: 'San Francisco, CA',
-      salary: '$120,000 - $180,000',
+      company: 'Vodacom Tanzania',
+      location: 'Dar es Salaam, Tanzania',
+      salary: 'TZS 12M - 18M',
       type: 'Full-time',
       posted: '2 days ago',
-      logo: '🏢',
+      logo: '📱',
       urgent: true,
     },
     {
       id: 2,
       title: 'Product Designer',
-      company: 'Design Studio',
-      location: 'New York, NY',
-      salary: '$90,000 - $130,000',
+      company: 'Tigo Tanzania',
+      location: 'Dar es Salaam, Tanzania',
+      salary: 'TZS 9M - 13M',
       type: 'Full-time',
       posted: '1 day ago',
       logo: '🎨',
@@ -46,12 +46,12 @@ const Home = () => {
     {
       id: 3,
       title: 'Marketing Manager',
-      company: 'Growth Co.',
-      location: 'Remote',
-      salary: '$80,000 - $110,000',
+      company: 'Azam Media',
+      location: 'Dar es Salaam, Tanzania',
+      salary: 'TZS 8M - 11M',
       type: 'Full-time',
       posted: '3 days ago',
-      logo: '📈',
+      logo: '📺',
       urgent: false,
     },
   ];
@@ -93,7 +93,7 @@ const Home = () => {
                 <div className="flex-1 relative">
                   <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
                   <Input
-                    placeholder="City, state, or remote"
+                    placeholder="City, region, or remote"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                     className="pl-10 h-12 text-gray-900 border-gray-200"

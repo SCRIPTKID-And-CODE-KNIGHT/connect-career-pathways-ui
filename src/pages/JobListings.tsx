@@ -15,23 +15,23 @@ const JobListings = () => {
   const [location, setLocation] = useState('');
   const [sortBy, setSortBy] = useState('latest');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [salaryRange, setSalaryRange] = useState([0, 200000]);
+  const [salaryRange, setSalaryRange] = useState([0, 20000000]);
   const [selectedJobTypes, setSelectedJobTypes] = useState<string[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
-  // Mock job data
+  // Mock job data - Tanzania companies
   const allJobs = [
     {
       id: 1,
       title: 'Senior Software Engineer',
-      company: 'TechCorp Inc.',
-      location: 'San Francisco, CA',
-      salary: { min: 120000, max: 180000 },
+      company: 'Vodacom Tanzania',
+      location: 'Dar es Salaam, Tanzania',
+      salary: { min: 12000000, max: 18000000 },
       type: 'Full-time',
       category: 'Technology',
       posted: new Date('2024-01-15'),
-      logo: '🏢',
-      description: 'Join our team of innovative engineers building the next generation of software products.',
+      logo: '📱',
+      description: 'Join our team of innovative engineers building the next generation of telecommunications products.',
       requirements: ['React', 'Node.js', 'TypeScript', '5+ years experience'],
       urgent: true,
       remote: false,
@@ -39,9 +39,9 @@ const JobListings = () => {
     {
       id: 2,
       title: 'Product Designer',
-      company: 'Design Studio',
-      location: 'New York, NY',
-      salary: { min: 90000, max: 130000 },
+      company: 'Tigo Tanzania',
+      location: 'Dar es Salaam, Tanzania',
+      salary: { min: 9000000, max: 13000000 },
       type: 'Full-time',
       category: 'Design',
       posted: new Date('2024-01-14'),
@@ -54,29 +54,29 @@ const JobListings = () => {
     {
       id: 3,
       title: 'Marketing Manager',
-      company: 'Growth Co.',
-      location: 'Remote',
-      salary: { min: 80000, max: 110000 },
+      company: 'Azam Media',
+      location: 'Dar es Salaam, Tanzania',
+      salary: { min: 8000000, max: 11000000 },
       type: 'Full-time',
       category: 'Marketing',
       posted: new Date('2024-01-13'),
-      logo: '📈',
+      logo: '📺',
       description: 'Lead our marketing efforts and drive growth across all channels.',
       requirements: ['Digital Marketing', 'Analytics', 'Campaign Management', '4+ years experience'],
       urgent: false,
-      remote: true,
+      remote: false,
     },
     {
       id: 4,
       title: 'Data Scientist',
-      company: 'AI Solutions',
-      location: 'Boston, MA',
-      salary: { min: 110000, max: 160000 },
+      company: 'CRDB Bank',
+      location: 'Dar es Salaam, Tanzania',
+      salary: { min: 11000000, max: 16000000 },
       type: 'Full-time',
       category: 'Technology',
       posted: new Date('2024-01-12'),
-      logo: '🤖',
-      description: 'Analyze complex data sets to drive business insights and machine learning models.',
+      logo: '🏦',
+      description: 'Analyze complex data sets to drive business insights and machine learning models for banking solutions.',
       requirements: ['Python', 'Machine Learning', 'SQL', 'Statistics', '3+ years experience'],
       urgent: true,
       remote: false,
@@ -84,14 +84,14 @@ const JobListings = () => {
     {
       id: 5,
       title: 'Frontend Developer',
-      company: 'Web Agency',
-      location: 'Austin, TX',
-      salary: { min: 70000, max: 100000 },
+      company: 'Selcom',
+      location: 'Dar es Salaam, Tanzania',
+      salary: { min: 7000000, max: 10000000 },
       type: 'Contract',
       category: 'Technology',
       posted: new Date('2024-01-11'),
-      logo: '💻',
-      description: 'Build responsive and interactive web applications using modern frameworks.',
+      logo: '💳',
+      description: 'Build responsive and interactive web applications for fintech solutions.',
       requirements: ['React', 'JavaScript', 'CSS', 'HTML', '2+ years experience'],
       urgent: false,
       remote: true,
@@ -99,13 +99,13 @@ const JobListings = () => {
     {
       id: 6,
       title: 'HR Generalist',
-      company: 'People First',
-      location: 'Chicago, IL',
-      salary: { min: 60000, max: 80000 },
+      company: 'Twiga Foods Tanzania',
+      location: 'Arusha, Tanzania',
+      salary: { min: 6000000, max: 8000000 },
       type: 'Part-time',
       category: 'Human Resources',
       posted: new Date('2024-01-10'),
-      logo: '👥',
+      logo: '🥬',
       description: 'Support all aspects of human resources including recruiting, onboarding, and employee relations.',
       requirements: ['HR Experience', 'Communication', 'Organization', '2+ years experience'],
       urgent: false,
@@ -173,7 +173,7 @@ const JobListings = () => {
   };
 
   const formatSalary = (min: number, max: number) => {
-    return `$${(min / 1000).toFixed(0)}k - $${(max / 1000).toFixed(0)}k`;
+    return `TZS ${(min / 1000000).toFixed(1)}M - ${(max / 1000000).toFixed(1)}M`;
   };
 
   const getTimeAgo = (date: Date) => {
@@ -208,12 +208,12 @@ const JobListings = () => {
             </div>
             <div className="flex-1 relative">
               <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-              <Input
-                placeholder="City, state, or remote"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                className="pl-10"
-              />
+                <Input
+                  placeholder="City, region, or remote"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  className="pl-10"
+                />
             </div>
             <Button className="lg:w-auto">
               <Search className="w-4 h-4 mr-2" />
@@ -275,14 +275,14 @@ const JobListings = () => {
                   <Slider
                     value={salaryRange}
                     onValueChange={setSalaryRange}
-                    max={200000}
+                    max={20000000}
                     min={0}
-                    step={5000}
+                    step={500000}
                     className="mb-2"
                   />
                   <div className="flex justify-between text-sm text-gray-600">
-                    <span>${(salaryRange[0] / 1000).toFixed(0)}k</span>
-                    <span>${(salaryRange[1] / 1000).toFixed(0)}k</span>
+                    <span>TZS {(salaryRange[0] / 1000000).toFixed(1)}M</span>
+                    <span>TZS {(salaryRange[1] / 1000000).toFixed(1)}M</span>
                   </div>
                 </div>
               </div>
@@ -330,7 +330,7 @@ const JobListings = () => {
                 onClick={() => {
                   setSelectedJobTypes([]);
                   setSelectedCategories([]);
-                  setSalaryRange([0, 200000]);
+                  setSalaryRange([0, 20000000]);
                 }}
                 className="w-full"
               >
