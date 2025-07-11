@@ -31,6 +31,7 @@ const App = () => (
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/index" element={<Home />} />
               <Route path="/jobs" element={<JobListings />} />
               <Route path="/jobs/:id" element={<JobDetail />} />
               <Route path="/post-job" element={<JobPostingForm />} />
