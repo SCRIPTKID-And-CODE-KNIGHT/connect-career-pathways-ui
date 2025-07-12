@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, MapPin, Briefcase, Users, TrendingUp, ChevronRight, Star, Building2, Code, Palette, Heart, Wrench, GraduationCap, Stethoscope } from 'lucide-react';
+import { Search, MapPin, Briefcase, Users, TrendingUp, ChevronRight, Star, Building2, Code, Palette, Heart, Wrench, GraduationCap, Stethoscope, Target, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -246,8 +246,49 @@ const Home = () => {
             Ready to Start Your Journey?
           </h2>
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
-            Join thousands of professionals who have found their dream jobs through FEA CONNECT
+            Join thousands of professionals who have found their dream jobs through FeaConnect
           </p>
+          
+          {/* About Section */}
+          <div className="bg-white text-gray-900 py-16 mt-16 rounded-lg">
+            <div className="max-w-4xl mx-auto px-6 text-center">
+              <h2 className="text-3xl font-extrabold mb-6">
+                About Us
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                FeaConnect is a trusted platform that connects job seekers with the latest employment opportunities and provides updates on education and career development. We aim to empower individuals by sharing reliable job posts, scholarships, and academic news. Our goal is to bridge the gap between talent and opportunity across various industries and fields.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mb-4">
+                    <Target className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-medium mb-2">Our Mission</h3>
+                  <p className="text-gray-600 text-center">
+                    To empower individuals by sharing reliable job posts, scholarships, and academic news across Tanzania.
+                  </p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mb-4">
+                    <Users className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-medium mb-2">Bridge the Gap</h3>
+                  <p className="text-gray-600 text-center">
+                    Connecting talent with opportunity across various industries and fields.
+                  </p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mb-4">
+                    <Zap className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-medium mb-2">Career Development</h3>
+                  <p className="text-gray-600 text-center">
+                    Updates on education and career development to help you grow professionally.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
               <Link to="/register">

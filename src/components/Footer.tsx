@@ -14,19 +14,16 @@ const Footer = () => {
               <span className="text-2xl font-bold">FEA CONNECT</span>
             </div>
             <p className="text-gray-300 text-sm">
-              Connecting talent with opportunity across Tanzania. Your career journey starts here.
+              A trusted platform connecting job seekers with employment opportunities and career development updates.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://facebook.com/FeaConnect" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://twitter.com/feaconnect" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://instagram.com/feaconnect" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -92,15 +89,15 @@ const Footer = () => {
             <div className="space-y-2 text-sm">
               <div className="flex items-center">
                 <MapPin className="h-4 w-4 mr-2 text-blue-400" />
-                <span className="text-gray-300">Dar es Salaam, Tanzania</span>
+                <span className="text-gray-300">Tanzania</span>
               </div>
               <div className="flex items-center">
                 <Phone className="h-4 w-4 mr-2 text-blue-400" />
-                <span className="text-gray-300">+255 123 456 789</span>
+                <span className="text-gray-300">+255 627 696 523</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-4 w-4 mr-2 text-blue-400" />
-                <span className="text-gray-300">info@feaconnect.co.tz</span>
+                <span className="text-gray-300">feaboy99@gmail.com</span>
               </div>
             </div>
           </div>
@@ -108,7 +105,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2025 FEA CONNECT. All rights reserved.
+            © 2025 FeaConnect. All rights reserved. Stay connected for the latest job posts, education updates, and career tips!
           </p>
         </div>
       </div>
