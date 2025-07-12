@@ -26,7 +26,7 @@ const Footer = () => {
               <a href="https://instagram.com/feaconnect" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://youtube.com/@feaconnect" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://youtube.com/@feaboy2?si=cbiLZ820Qi3CC1yr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
