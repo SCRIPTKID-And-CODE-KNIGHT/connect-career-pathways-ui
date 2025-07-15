@@ -1,6 +1,6 @@
 
-import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useMemo, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Search, MapPin, Filter, Grid, List, Clock, Briefcase, Building2, DollarSign, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,6 +11,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Slider } from '@/components/ui/slider';
 
 const JobListings = () => {
+  const [searchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
   const [location, setLocation] = useState('');
   const [sortBy, setSortBy] = useState('latest');
@@ -18,6 +19,13 @@ const JobListings = () => {
   const [salaryRange, setSalaryRange] = useState([0, 20000000]);
   const [selectedJobTypes, setSelectedJobTypes] = useState<string[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+
+  useEffect(() => {
+    const categoryFromUrl = searchParams.get('category');
+    if (categoryFromUrl) {
+      setSelectedCategories([categoryFromUrl]);
+    }
+  }, [searchParams]);
 
   // Mock job data - Tanzania companies
   const allJobs = [
