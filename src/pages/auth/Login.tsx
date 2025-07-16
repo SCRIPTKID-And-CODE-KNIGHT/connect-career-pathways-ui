@@ -13,7 +13,7 @@ import { toast } from '@/hooks/use-toast';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('');
+  
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   
@@ -23,10 +23,10 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!email || !password || !role) {
+    if (!email || !password) {
       toast({
         title: "Missing Information",
-        description: "Please fill in all fields",
+        description: "Please fill in email and password",
         variant: "destructive",
       });
       return;
@@ -35,24 +35,15 @@ const Login = () => {
     setIsLoading(true);
     
     try {
-      await login(email, password, role);
+      await login(email, password);
       toast({
         title: "Welcome back!",
         description: "You have successfully signed in.",
       });
-      
-      // Redirect based on role
-      if (role === 'employer') {
-        navigate('/employer/dashboard');
-      } else if (role === 'admin') {
-        navigate('/admin');
-      } else {
-        navigate('/dashboard');
-      }
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: "Sign In Failed",
-        description: "Invalid credentials. Please try again.",
+        description: error.message || "Invalid credentials. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -83,20 +74,6 @@ const Login = () => {
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Role Selection */}
-              <div className="space-y-2">
-                <Label htmlFor="role">I am a:</Label>
-                <Select value={role} onValueChange={setRole}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select your role" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="jobseeker">Job Seeker</SelectItem>
-                    <SelectItem value="employer">Employer</SelectItem>
-                    <SelectItem value="admin">Admin</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
 
               {/* Email */}
               <div className="space-y-2">
@@ -161,19 +138,14 @@ const Login = () => {
               {/* Demo Accounts */}
               <div className="mt-6 p-4 bg-gray-50 rounded-lg">
                 <p className="text-sm text-gray-600 font-medium mb-3">Demo Accounts:</p>
-                <div className="space-y-2 text-xs">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Job Seeker:</span>
-                    <span className="font-mono">jobseeker@demo.com / demo123</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Employer:</span>
-                    <span className="font-mono">employer@demo.com / demo123</span>
-                  </div>
+                 <div className="space-y-2 text-xs">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Admin:</span>
-                    <span className="font-mono">admin@demo.com / admin123</span>
+                    <span className="font-mono">admin@feaconnect.com / admin123</span>
                   </div>
+                  <p className="text-xs text-gray-500 mt-2">
+                    Create new accounts using the Register page
+                  </p>
                 </div>
               </div>
             </form>
