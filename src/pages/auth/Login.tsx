@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Briefcase, Mail, Lock } from 'lucide-react';
@@ -6,23 +5,21 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useAuth } from '@/contexts/AuthContext';
 import { toast } from '@/hooks/use-toast';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!email || !password) {
       toast({
         title: "Missing Information",
@@ -33,14 +30,24 @@ const Login = () => {
     }
 
     setIsLoading(true);
-    
     try {
-      await login(email, password);
+      const { user } = await login(email, password);
+
       toast({
         title: "Welcome back!",
         description: "You have successfully signed in.",
       });
-    } catch (error: any) {
+
+      // ✅ REDIRECT BASED ON USER ROLE
+      if (user?.role === "employer") {
+        navigate("/employer/dashboard");
+      } else if (user?.role === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/dashboard");
+      }
+
+    } catch (error) {
       toast({
         title: "Sign In Failed",
         description: error.message || "Invalid credentials. Please try again.",
@@ -54,7 +61,6 @@ const Login = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
-        {/* Header */}
         <div className="text-center">
           <div className="flex justify-center items-center mb-6">
             <Briefcase className="h-12 w-12 text-white mr-3" />
@@ -64,7 +70,6 @@ const Login = () => {
           <p className="text-blue-100">Sign in to your account to continue</p>
         </div>
 
-        {/* Form Card */}
         <Card className="shadow-2xl">
           <CardHeader>
             <CardTitle className="text-center">Sign In</CardTitle>
@@ -74,8 +79,6 @@ const Login = () => {
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
-
-              {/* Email */}
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <div className="relative">
@@ -92,7 +95,6 @@ const Login = () => {
                 </div>
               </div>
 
-              {/* Password */}
               <div className="space-y-2">
                 <Label htmlFor="password">Password</Label>
                 <div className="relative">
@@ -116,7 +118,6 @@ const Login = () => {
                 </div>
               </div>
 
-              {/* Forgot Password */}
               <div className="text-right">
                 <Link
                   to="/forgot-password"
@@ -126,7 +127,6 @@ const Login = () => {
                 </Link>
               </div>
 
-              {/* Submit Button */}
               <Button
                 type="submit"
                 className="w-full bg-blue-600 hover:bg-blue-700"
@@ -135,10 +135,9 @@ const Login = () => {
                 {isLoading ? 'Signing In...' : 'Sign In'}
               </Button>
 
-              {/* Demo Accounts */}
               <div className="mt-6 p-4 bg-gray-50 rounded-lg">
                 <p className="text-sm text-gray-600 font-medium mb-3">Demo Accounts:</p>
-                 <div className="space-y-2 text-xs">
+                <div className="space-y-2 text-xs">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Admin:</span>
                     <span className="font-mono">admin@feaconnect.com / admin123</span>
@@ -152,7 +151,6 @@ const Login = () => {
           </CardContent>
         </Card>
 
-        {/* Sign Up Link */}
         <div className="text-center">
           <p className="text-blue-100">
             Don't have an account?{' '}
